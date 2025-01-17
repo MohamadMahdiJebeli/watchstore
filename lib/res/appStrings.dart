@@ -13,8 +13,8 @@ abstract class AppStrings{
   static const String nameHint = "Enter Your Name And Last Name";
   static const String postalCode = "َPostal code";
   static const String postalCodeHint= "Enter Your Postal Code";
-  static const String location = "Location";
-  static const String locationHint = "Tap to select location.";
+  static const String location = "Select Location";
+  static const String locationHint = "latitude and longitude";
   static const String chooseProfileImage = "Choose your profile image";
   static const String finish = "Finish";
   static const String signUp = "Sign Up";
@@ -36,4 +36,8 @@ abstract class AppStrings{
   static const String inProccess = "In Proccess";
   static const String cancelled= "Cancelled";
   static const String delivered= "Delivered";
+  static const String error= "Something's went wrong...";
+  static const String cancel="Cancel";
+  static const String confirm="Confirm";
+  static const String addedToCart="Successfully added to cart";
 }

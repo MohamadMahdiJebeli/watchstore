@@ -1,74 +1,97 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:watchstore/components/extension.dart';
 import 'package:watchstore/components/textStyle.dart';
+import 'package:watchstore/data/model/cart.dart';
 import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
+import 'package:watchstore/screens/cart/bloc/cart_bloc.dart';
 import 'package:watchstore/widgets/surfaceContainer.dart';
 
-class ShoppingCart extends StatelessWidget{
-  const ShoppingCart({
-    super.key,
-    this.oldPrice=0,
-    required this.price,
-    this.count=0,
-    required this.productName
-    });
-
-  final int oldPrice;
-  final int price;
-  final int count;
-  final String productName;
-
+class ShoppingCartItem extends StatefulWidget {
+  ShoppingCartItem({super.key, required this.cartModel});
+  CartModel cartModel;
 
   @override
-  Widget build(BuildContext context) {
-  
-    Size size = MediaQuery.of(context).size;
+  State<ShoppingCartItem> createState() => _ShoppingCartItemState();
+}
 
+class _ShoppingCartItemState extends State<ShoppingCartItem> {
+  @override
+  Widget build(BuildContext context) {
+    final cartBloc = BlocProvider.of<CartBloc>(context);
     return SurfaceContainer(
-      child: Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(AppDimens.small),
-            child: Image.asset(Assets.png.appleWatchSeries10.path,height: size.height/8,),
-          ),
-          Column(
+        child: Row(
+      children: [
+        Image.network(
+          widget.cartModel.image,
+          height: 110,
+        ),
+        Expanded(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(productName, style: LightAppTextStyle.productTitle),
-              Text("${oldPrice.separateWithComma} toman",style: LightAppTextStyle.caption,),
-              Text("Final Price: ${price.separateWithComma} toman",style: LightAppTextStyle.caption.copyWith(color: LightAppColors.primary),),
-              AppDimens.small.height,
-              Container(
-                color: LightAppColors.border,
-                height: 2,
-                width: size.width*0.55,
+              Text(
+                widget.cartModel.product,
+                style: LightAppTextStyle.productTitle.copyWith(fontSize: 12),
               ),
+              Text(
+                "Price : ${widget.cartModel.price.separateWithComma} تومان",
+                style: LightAppTextStyle.caption,
+              ),
+              Visibility(
+                visible: widget.cartModel.discount > 0,
+                child: Text(
+                  "Price for Pay : ${widget.cartModel.discountPrice.separateWithComma}  تومان",
+                  style: LightAppTextStyle.caption
+                      .copyWith(color: LightAppColors.primary),
+                ),
+              ),
+              const Divider(),
               Row(
                 children: [
                   IconButton(
-                    onPressed: (){
-
-                    },
-                    icon: SvgPicture.asset(Assets.svg.minus)),
-                  Text(count.toString(),style: const TextStyle(fontWeight: FontWeight.bold),),
+                      onPressed: () {
+                        setState(() => widget.cartModel.countLoading = true);
+                        cartBloc.add(
+                            RemoveFromCartEvent(widget.cartModel.productId));
+                      },
+                      icon: SvgPicture.asset(Assets.svg.minus)),
+                  widget.cartModel.countLoading
+                      ? const SizedBox(
+                          height: 24,
+                          width: 24,
+                          child: CircularProgressIndicator(),
+                        )
+                      : Text("${widget.cartModel.count}"),
                   IconButton(
-                    onPressed: (){
-                    },
-                    icon: SvgPicture.asset(Assets.svg.plus)),
-                  SizedBox(width: size.width*0.2,),
+                      onPressed: () {
+                        setState(() => widget.cartModel.countLoading = true);
+                        cartBloc
+                            .add(AddToCartEvent(widget.cartModel.productId));
+                      },
+                      icon: SvgPicture.asset(Assets.svg.plus)),
+                      const Expanded(child: SizedBox()),
                   IconButton(
-                    onPressed: (){},
-                    icon: SvgPicture.asset(Assets.svg.delete)),
+                      onPressed: () {
+                        setState(() => widget.cartModel.deleteLoading = true);
+                        cartBloc
+                            .add(DeleteFromCartEvent(widget.cartModel.productId));
+                      },
+                      icon: SvgPicture.asset(Assets.svg.delete)),
                 ],
-              )
+              ),
+              Visibility(
+                  visible: widget.cartModel.deleteLoading,
+                  child: const LinearProgressIndicator())
             ],
-          )
-        ],
-      ),
-      );
+          ),
+        ),
+        
+      ],
+    ));
   }
 }

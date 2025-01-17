@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:watchstore/components/extension.dart';
 import 'package:watchstore/components/textStyle.dart';
+import 'package:watchstore/data/repo/cartRepo.dart';
 import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
-import 'package:watchstore/screens/mainScreen/basketScreen.dart';
-import 'package:watchstore/screens/mainScreen/homeScreen.dart';
-import 'package:watchstore/screens/mainScreen/profileScreen.dart';
+import 'package:watchstore/screens/cart/basketScreen.dart';
+import 'package:watchstore/screens/home/homeScreen.dart';
+import 'package:watchstore/screens/profile/profileScreen.dart';
 import 'package:watchstore/widgets/bttmNavItem.dart';
 
 class BttmNavScreenIndex{
@@ -100,14 +101,19 @@ class _MainscreenState extends State<Mainscreen> {
                         isActive: selectedIndex==BttmNavScreenIndex.home,
                         text: AppStrings.home,
                         ),
-                        BttmNavItem(
+                        ValueListenableBuilder(
+                          valueListenable: cartRepository.cartCount,
+                          builder: (context, value, child) {
+                            return 
+                            BttmNavItem(
                         onTap: ()=>bttmNavOnPressed(index: BttmNavScreenIndex.basket),
                         iconPath: Assets.svg.cart,
                         isActive: selectedIndex==BttmNavScreenIndex.basket,
                         text: AppStrings.cart,
                         cartCount: true,
-                        count: 1,
-                        ),
+                        count: value,
+                        );
+                          },),
                         BttmNavItem(
                         onTap: ()=>bttmNavOnPressed(index: BttmNavScreenIndex.profile),
                         iconPath: Assets.svg.user,

@@ -45,11 +45,11 @@ class CatWidget extends StatelessWidget {
               children: [
                 SizedBox(
                   height: size.height/14,
-                  child: SvgPicture.asset(iconPath,)),
+                  child: Image.network(iconPath,)),
               ],
             ),
           ),
-          Text(title,style: LightAppTextStyle.title.copyWith(fontSize: 18),)
+          Text(title,style: LightAppTextStyle.title.copyWith(fontSize: 15),)
         ],
       ),
     );

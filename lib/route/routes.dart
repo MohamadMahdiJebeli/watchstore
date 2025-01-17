@@ -1,16 +1,16 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:watchstore/route/names.dart';
-import 'package:watchstore/screens/getOTP_screen.dart';
+import 'package:watchstore/screens/auth/sendSMS_Screen.dart';
+import 'package:watchstore/screens/auth/verifyCodeScreen.dart';
 import 'package:watchstore/screens/mainScreen/mainScreen.dart';
-import 'package:watchstore/screens/productListScreen.dart';
-import 'package:watchstore/screens/productSingleScreen.dart';
-import 'package:watchstore/screens/registerScreen.dart';
-import 'package:watchstore/screens/sendOTP_Screen.dart';
+import 'package:watchstore/screens/productList/productListScreen.dart';
+import 'package:watchstore/screens/productSingle/productSingleScreen.dart';
+import 'package:watchstore/screens/register/registerScreen.dart';
 
 Map<String,Widget Function(BuildContext)> routes={
-  ScreenNames.root : (context) => SendOTPScreen(),
-  ScreenNames.getOTPScreen : (context) => GetOTPScreen(),
+  ScreenNames.sendSMSScreen : (context) => SendSMS_Screen(),
+  ScreenNames.verifyCodeScreen : (context) => VerifyCodeScreen(),
   ScreenNames.registerScreen : (context) => Registerscreen(),
   ScreenNames.mainScreen : (context) => Mainscreen(),
   ScreenNames.productListScreen : (context) => const ProductListScreen(),

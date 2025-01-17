@@ -36,4 +36,7 @@ class LightAppColors{
   static const addToCartNav = Color.fromARGB(255, 249 , 249, 249);
   static const addToCart = Color.fromARGB(255, 0, 117, 251);
   static const buy = Colors.green;
+  static Color singleProductBG = Colors.white.withOpacity(0.5);
+  static const success = Colors.green;
+  static const unSuccess = Colors.white;
 }
