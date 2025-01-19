@@ -29,7 +29,7 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Padding(padding: EdgeInsets.all(AppDimens.medium),
+    return Padding(padding: const EdgeInsets.all(AppDimens.medium),
     child: Column(
       children: [
         SizedBox(

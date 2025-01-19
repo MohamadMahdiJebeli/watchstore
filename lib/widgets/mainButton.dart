@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:watchstore/components/buttonStyle.dart';
 
+// ignore: must_be_immutable
 class MainButton extends StatelessWidget {
   final String text;
   void Function() onPressed;

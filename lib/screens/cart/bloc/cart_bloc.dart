@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:watchstore/data/model/cart.dart';
 import 'package:watchstore/data/repo/cartRepo.dart';
-import 'package:watchstore/screens/register/cubit/register_cubit.dart';
 
 part 'cart_event.dart';
 part 'cart_state.dart';

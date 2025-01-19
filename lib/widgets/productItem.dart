@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:watchstore/components/extension.dart';
 import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/data/model/product.dart';
-import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/screens/productSingle/productSingleScreen.dart';
 import 'package:watchstore/utils/formatTime.dart';
 
+// ignore: must_be_immutable
 class ProductItem extends StatefulWidget {
   ProductItem({
     super.key,
@@ -24,10 +24,11 @@ class ProductItem extends StatefulWidget {
 
 class _ProductItemState extends State<ProductItem> {
   
+  // ignore: unused_field
   late Timer _timer;
   int inSecond=0;
   
-  Duration _duration = Duration(seconds: 1);
+  Duration _duration = const Duration(seconds: 1);
 
   @override
   void initState() {

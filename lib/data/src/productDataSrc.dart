@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:watchstore/data/constant.dart';
 import 'package:watchstore/data/model/product.dart';

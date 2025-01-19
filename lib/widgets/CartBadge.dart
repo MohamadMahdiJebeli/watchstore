@@ -9,6 +9,7 @@ class CartBadge extends StatelessWidget {
     this.count = 0
     });
 
+  // ignore: prefer_typing_uninitialized_variables
   final count;
 
   @override

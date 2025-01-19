@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class LightAppColors{
@@ -36,6 +35,7 @@ class LightAppColors{
   static const addToCartNav = Color.fromARGB(255, 249 , 249, 249);
   static const addToCart = Color.fromARGB(255, 0, 117, 251);
   static const buy = Colors.green;
+  // ignore: deprecated_member_use
   static Color singleProductBG = Colors.white.withOpacity(0.5);
   static const success = Colors.green;
   static const unSuccess = Colors.white;

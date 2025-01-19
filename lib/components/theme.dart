@@ -13,8 +13,8 @@ ThemeData lightTheme(){
 
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: MaterialStateColor.resolveWith((states) {
-        if(states.contains(MaterialState.focused)){
+      fillColor: WidgetStateColor.resolveWith((states) {
+        if(states.contains(WidgetState.focused)){
           return LightAppColors.focusTextField;
         } else {
           return LightAppColors.unfocusTextField;

@@ -14,6 +14,7 @@ class SinglePrice extends StatelessWidget {
 
   final int price;
   final int oldPrice;
+  // ignore: prefer_typing_uninitialized_variables
   final offer;
 
   @override

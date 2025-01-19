@@ -165,7 +165,9 @@ class Profilescreen extends StatelessWidget {
 class ProfileItem extends StatelessWidget {
   const ProfileItem({super.key, required this.content, required this.icon});
 
+  // ignore: prefer_typing_uninitialized_variables
   final content;
+  // ignore: prefer_typing_uninitialized_variables
   final icon;
 
   @override

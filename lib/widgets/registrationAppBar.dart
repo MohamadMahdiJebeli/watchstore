@@ -35,6 +35,5 @@ class RegistrationAppBar extends StatelessWidget implements PreferredSizeWidget{
   }
   
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(size.height*0.3);
 }

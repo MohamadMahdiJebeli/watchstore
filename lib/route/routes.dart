@@ -10,8 +10,8 @@ import 'package:watchstore/screens/register/registerScreen.dart';
 
 Map<String,Widget Function(BuildContext)> routes={
   ScreenNames.sendSMSScreen : (context) => SendSMS_Screen(),
-  ScreenNames.verifyCodeScreen : (context) => VerifyCodeScreen(),
-  ScreenNames.registerScreen : (context) => Registerscreen(),
+  ScreenNames.verifyCodeScreen : (context) => const VerifyCodeScreen(),
+  ScreenNames.registerScreen : (context) => const Registerscreen(),
   ScreenNames.mainScreen : (context) => Mainscreen(),
   ScreenNames.productListScreen : (context) => const ProductListScreen(),
   ScreenNames.producSingleScreen : (context) => const ProductSingleScreen(),

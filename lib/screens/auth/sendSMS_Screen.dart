@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watchstore/components/extension.dart';
@@ -10,12 +11,14 @@ import 'package:watchstore/screens/auth/cubit/auth_cubit.dart';
 import 'package:watchstore/widgets/appTextField.dart';
 import 'package:watchstore/widgets/mainButton.dart';
 
+// ignore: must_be_immutable, camel_case_types
 class SendSMS_Screen extends StatelessWidget {
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
+
+  SendSMS_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,

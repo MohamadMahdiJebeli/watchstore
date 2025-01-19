@@ -14,6 +14,7 @@ class ImageHandler{
       img = await _cropImage(imageFile: img);
       _image=img;
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }

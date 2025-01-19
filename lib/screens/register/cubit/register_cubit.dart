@@ -6,7 +6,6 @@ import 'package:watchstore/data/constant.dart';
 import 'package:watchstore/data/model/user.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/dimens.dart';
-import 'package:watchstore/screens/auth/cubit/auth_cubit.dart';
 import 'package:watchstore/utils/sharedPreferencesKey.dart';
 import 'package:watchstore/utils/sharedPreferencesManger.dart';
 

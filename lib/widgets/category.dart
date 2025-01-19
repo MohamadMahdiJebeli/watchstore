@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:watchstore/components/textStyle.dart';
-import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/dimens.dart';
 
 class CatWidget extends StatelessWidget {
@@ -13,9 +11,13 @@ class CatWidget extends StatelessWidget {
     required this.iconPath,
   });
 
+  // ignore: prefer_typing_uninitialized_variables
   final title;
+  // ignore: prefer_typing_uninitialized_variables
   final ontap;
+  // ignore: prefer_typing_uninitialized_variables
   final colors;
+  // ignore: prefer_typing_uninitialized_variables
   final iconPath;
 
   @override

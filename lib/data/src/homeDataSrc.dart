@@ -16,12 +16,12 @@ class HomeRemoteDataSrc implements IHomeDataSrc{
   @override
   Future<HomeModel> getHome() async {
 
-    final HomeModel _home;
+    final HomeModel home;
 
     final response = await httpClient.get(EndPoints.home);
     HTTPResponseValidator.isValidStatusCode(response.statusCode??0);
-    _home = HomeModel.fromJson(response.data['data']);
-    return _home; 
+    home = HomeModel.fromJson(response.data['data']);
+    return home; 
   }
 
 }

@@ -1,14 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:watchstore/components/extension.dart';
-import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/data/repo/cartRepo.dart';
 import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/colors.dart';
-import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/screens/cart/basketScreen.dart';
 import 'package:watchstore/screens/home/homeScreen.dart';
 import 'package:watchstore/screens/profile/profileScreen.dart';
@@ -23,6 +17,7 @@ class BttmNavScreenIndex{
 }
 
 class Mainscreen extends StatefulWidget {
+  // ignore: prefer_const_constructors_in_immutables
   Mainscreen({super.key});
 
   @override
@@ -56,6 +51,7 @@ class _MainscreenState extends State<Mainscreen> {
     var size = MediaQuery.of(context).size;
     double bttmNavHeight = size.height*0.08;
 
+    // ignore: unnecessary_constructor_name, deprecated_member_use
     return WillPopScope.new(
       onWillPop: _onWillPop,
       child: Scaffold(

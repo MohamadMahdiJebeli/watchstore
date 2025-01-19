@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -15,13 +16,15 @@ import 'package:watchstore/widgets/appTextField.dart';
 import 'package:watchstore/widgets/mainButton.dart';
 
 class VerifyCodeScreen extends StatefulWidget {
+  const VerifyCodeScreen({super.key});
+
   @override
   State<VerifyCodeScreen> createState() => _VerifyCodeScreenState();
 }
 
 class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState(){
@@ -49,7 +52,6 @@ class _VerifyCodeScreenState extends State<VerifyCodeScreen> {
   @override
   Widget build(BuildContext context) {
     final mobileRouteArg = ModalRoute.of(context)!.settings.arguments as String;
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,

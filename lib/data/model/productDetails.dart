@@ -1,3 +1,4 @@
+// ignore: file_names
 class ProductDetailesModel {
   int? id;
   String? title;
@@ -78,7 +79,7 @@ class ProductDetailesModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['title'] = title;
     data['title_en'] = titleEn;
@@ -139,7 +140,7 @@ class Properties {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['property'] = property;
     data['value'] = value;
     return data;
@@ -158,7 +159,7 @@ class Comments {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['user'] = user;
     data['body'] = body;
     return data;

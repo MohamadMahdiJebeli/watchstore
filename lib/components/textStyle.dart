@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:watchstore/gen/fonts.gen.dart';
 import 'package:watchstore/res/colors.dart';

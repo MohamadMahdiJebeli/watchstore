@@ -10,9 +10,7 @@ import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/screens/cart/bloc/cart_bloc.dart';
 import 'package:watchstore/widgets/customAppBar.dart';
-import 'package:watchstore/widgets/productItem.dart';
 import 'package:watchstore/widgets/shoppingCart.dart';
-import 'package:watchstore/widgets/surfaceContainer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Basketscreen extends StatelessWidget {
@@ -105,14 +103,20 @@ class Basketscreen extends StatelessWidget {
               UserCart? userCart;
 
               switch (state.runtimeType) {
+                // ignore: type_literal_in_constant_pattern
                 case CartLoadedState:
+                // ignore: type_literal_in_constant_pattern
                 case CartItemAddState:
+                // ignore: type_literal_in_constant_pattern
                 case CartItemDeleteState:
+                // ignore: type_literal_in_constant_pattern
                 case CartItemRemoveState:
                   userCart = (state as dynamic).userCart;
                   break;
+                // ignore: type_literal_in_constant_pattern
                 case CartErrorState:
                   return const Text(AppStrings.error);
+                // ignore: type_literal_in_constant_pattern
                 case CartLoadingState:
                   return const Center(
                         child: Stack(alignment: Alignment.center, children: [
@@ -185,6 +189,7 @@ class Basketscreen extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class CartList extends StatelessWidget {
   List<CartModel> list;
 

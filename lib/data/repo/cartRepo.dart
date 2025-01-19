@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:watchstore/data/conf/remoteConf.dart';
 import 'package:watchstore/data/model/cart.dart';

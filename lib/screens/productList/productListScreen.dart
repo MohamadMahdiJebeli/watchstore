@@ -1,22 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:watchstore/components/extension.dart';
 import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/data/repo/cartRepo.dart';
 import 'package:watchstore/data/repo/productRepo.dart';
-import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/screens/productList/bloc/product_list_bloc.dart';
-import 'package:watchstore/screens/register/cubit/register_cubit.dart';
 import 'package:watchstore/widgets/CartBadge.dart';
 import 'package:watchstore/widgets/customAppBar.dart';
 import 'package:watchstore/widgets/productItem.dart';
 
 class ProductListScreen extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final param;
   const ProductListScreen({super.key, this.param});
 

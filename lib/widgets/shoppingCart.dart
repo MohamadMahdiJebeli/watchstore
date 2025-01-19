@@ -7,10 +7,10 @@ import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/data/model/cart.dart';
 import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/colors.dart';
-import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/screens/cart/bloc/cart_bloc.dart';
 import 'package:watchstore/widgets/surfaceContainer.dart';
 
+// ignore: must_be_immutable
 class ShoppingCartItem extends StatefulWidget {
   ShoppingCartItem({super.key, required this.cartModel});
   CartModel cartModel;

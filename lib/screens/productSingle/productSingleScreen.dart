@@ -6,7 +6,6 @@ import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/data/model/productDetails.dart';
 import 'package:watchstore/data/repo/cartRepo.dart';
 import 'package:watchstore/data/repo/productRepo.dart';
-import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/gen/fonts.gen.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/colors.dart';
@@ -14,12 +13,12 @@ import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/screens/cart/bloc/cart_bloc.dart';
 import 'package:watchstore/screens/productSingle/bloc/product_single_bloc.dart';
 import 'package:watchstore/screens/productSingle/bloc/product_single_event.dart';
-import 'package:watchstore/screens/register/cubit/register_cubit.dart';
 import 'package:watchstore/widgets/CartBadge.dart';
 import 'package:watchstore/widgets/customAppBar.dart';
 import 'package:watchstore/widgets/singlePrice.dart';
 
 class ProductSingleScreen extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final id;
   const ProductSingleScreen({super.key, this.id});
 
@@ -132,12 +131,12 @@ class ProductSingleScreen extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.all(AppDimens.small),
                               child: SinglePrice(
-                                price: 2800,
-                                oldPrice: 2200,
-                                offer: 20,
+                                price: state.productDetailes.discountPrice??0,
+                                oldPrice: state.productDetailes.price??0,
+                                offer: state.productDetailes.discount??0,
                               ),
                             ),
                             BlocConsumer<CartBloc, CartState>(
@@ -277,7 +276,8 @@ class Features extends StatelessWidget {
             color: LightAppColors.surface,
             borderRadius: BorderRadius.circular(AppDimens.medium),
           ),
-          child: Text("${properties[index].value} : ${properties[index].property}",style: LightAppTextStyle.caption,),
+          child: Center(
+            child: Text("${properties[index].value}   :      ${properties[index].property}",style: LightAppTextStyle.caption,)),
         );
       },
       );
@@ -285,6 +285,7 @@ class Features extends StatelessWidget {
 }
 
 class Review extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final text;
   const Review({super.key, this.text});
 

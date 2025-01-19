@@ -11,7 +11,9 @@ class Avatar extends StatelessWidget {
     required this.file
     });
 
+  // ignore: prefer_typing_uninitialized_variables
   final onTap;
+  // ignore: prefer_typing_uninitialized_variables
   final file;
 
   @override

@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,7 +8,6 @@ import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
-import 'package:watchstore/route/names.dart';
 import 'package:watchstore/screens/home/bloc/home_bloc.dart';
 import 'package:watchstore/screens/productList/productListScreen.dart';
 import 'package:watchstore/widgets/category.dart';
@@ -35,19 +33,22 @@ class HomeScreen extends StatelessWidget {
           child: BlocBuilder<HomeBloc, HomeState>(
             builder: (context, state) {
               if (state is HomeLoading) {
-                return const Center(
-                    child: Stack(alignment: Alignment.center, children: [
-                  CircularProgressIndicator(
-                    strokeWidth: 4,
-                    valueColor:
-                        AlwaysStoppedAnimation<Color>(LightAppColors.primary),
-                  ),
-                  Icon(
-                    Icons.watch,
-                    color: LightAppColors.primary,
-                    size: 50,
-                  ),
-                ]));
+                return SizedBox(
+                  height: size.height,
+                  child: const Center(
+                      child: Stack(alignment: Alignment.center, children: [
+                    CircularProgressIndicator(
+                      strokeWidth: 4,
+                      valueColor:
+                          AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 0, 28, 61)),
+                    ),
+                    Icon(
+                      Icons.watch,
+                      color: Color.fromARGB(255, 0, 28, 61),
+                      size: 50,
+                    ),
+                  ])),
+                );
               } else if (state is HomeLoaded) {
                 return Column(
                   children: [
@@ -87,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                           children: [
                             const VerticalText(),
                             SizedBox(
-                              height: size.height * 0.4,
+                              height: size.height * 0.37,
                               child: ListView.builder(
                                   physics: const ClampingScrollPhysics(),
                                   scrollDirection: Axis.horizontal,

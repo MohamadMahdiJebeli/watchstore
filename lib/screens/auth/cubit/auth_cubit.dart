@@ -1,8 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:dio/dio.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:watchstore/data/constant.dart';
 import 'package:watchstore/utils/sharedPreferencesManger.dart';
 
@@ -12,7 +10,7 @@ class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial()){
     emit(LoggedOutState());
   }
-  Dio _dio = Dio();
+  final Dio _dio = Dio();
 
   sendSMS(String phoneNumber) async{
     emit(LodingState());

@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:watchstore/components/extension.dart';
 import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
 
+// ignore: must_be_immutable
 class BttmNavItem extends StatelessWidget {
   
   void Function() onTap;

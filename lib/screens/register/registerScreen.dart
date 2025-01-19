@@ -1,17 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:watchstore/components/extension.dart';
-import 'package:watchstore/components/textStyle.dart';
 import 'package:watchstore/data/model/user.dart';
-import 'package:watchstore/gen/assets.gen.dart';
 import 'package:watchstore/res/appStrings.dart';
 import 'package:watchstore/res/colors.dart';
 import 'package:watchstore/res/dimens.dart';
 import 'package:watchstore/route/names.dart';
-import 'package:watchstore/screens/mainScreen/mainScreen.dart';
 import 'package:watchstore/screens/register/cubit/register_cubit.dart';
 import 'package:watchstore/utils/imageHandler.dart';
 import 'package:watchstore/widgets/appTextField.dart';
@@ -20,16 +16,16 @@ import 'package:watchstore/widgets/mainButton.dart';
 import 'package:watchstore/widgets/registrationAppBar.dart';
 
 class Registerscreen extends StatefulWidget {
-  Registerscreen({super.key});
+  const Registerscreen({super.key});
 
   @override
   State<Registerscreen> createState() => _RegisterscreenState();
 }
 
 class _RegisterscreenState extends State<Registerscreen> {
-  TextEditingController _controllerName = TextEditingController();
-  TextEditingController _controllerPostalCode = TextEditingController();
-  TextEditingController _controllerLocation = TextEditingController();
+  final TextEditingController _controllerName = TextEditingController();
+  final TextEditingController _controllerPostalCode = TextEditingController();
+  final TextEditingController _controllerLocation = TextEditingController();
   double lat = 0.0;
   double lng = 0.0;
 
@@ -138,6 +134,7 @@ class _RegisterscreenState extends State<Registerscreen> {
                             lat: lat,
                             lng: lng);
 
+                          // ignore: use_build_context_synchronously
                           BlocProvider.of<RegisterCubit>(context).register(user: user);
                         },
                       ); 
